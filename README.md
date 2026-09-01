@@ -10,6 +10,13 @@ Student number: ST10516576
 Institution: The Independent Institute of Education (IIE)
 
 
+GitHub Repository
+
+Link: https://github.com/basimakhtar/WEDE5020-PoE
+
+This repository is on a personal GitHub account because the school's repository invitation link had expired and could not be used.
+
+
 Project Overview
 
 This project is a multi-page website for VoltStream Plumbing and Electrical (Pty) Ltd, a small plumbing and electrical business in Johannesburg. Two proposals were written, one for VoltStream and one for Paws of Hope Animal Shelter, and VoltStream was chosen as the organisation to build for.
@@ -77,6 +84,7 @@ Changelog
 1 September 2026 - VoltStream confirmed as the chosen organisation.
 1 September 2026 - the css and js files emptied.
 1 September 2026 - README and content inventory simplified.
+1 September 2026 - GitHub repository link and note added to the README.
 
 
 References (Harvard Style, adapted for the IIE)
