@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="80" viewBox="0 0 320 80" role="img" aria-label="VoltStream Plumbing and Electrical logo">
+  <!-- Original logo created for VoltStream Plumbing and Electrical (fictional organisation) -->
+  <defs>
+    <linearGradient id="dropGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E90C8"/>
+      <stop offset="100%" stop-color="#0B4F8A"/>
+    </linearGradient>
+  </defs>
+  <!-- Circular badge -->
+  <circle cx="40" cy="40" r="34" fill="url(#dropGrad)"/>
+  <circle cx="40" cy="40" r="34" fill="none" stroke="#0B4F8A" stroke-width="2"/>
+  <!-- Water droplet -->
+  <path d="M40 22 C50 32 55 37 55 44 A15 15 0 1 1 25 44 C25 37 30 32 40 22 Z" fill="#FFFFFF"/>
+  <!-- Lightning bolt inside droplet -->
+  <path d="M41 33 L34 43 L39 43 L37 51 L46 40 L41 40 L44 33 Z" fill="#F5A623"/>
+  <!-- Wordmark -->
+  <text x="84" y="36" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="bold" fill="#0B4F8A">Volt<text fill="#F5A623">Stream</text></text>
+  <text x="86" y="58" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#455A64">PLUMBING &amp; ELECTRICAL</text>
+</svg>
