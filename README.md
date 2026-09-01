@@ -7,7 +7,6 @@ Student Information
 
 Full name: Basim Ubaid Akhtar
 Student number: ST10516576
-Group: Group 3
 Institution: The Independent Institute of Education (IIE)
 
 
