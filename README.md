@@ -124,6 +124,7 @@ index.html (Home)
 | 1 Sep 2026 | Sourced and web-optimised 8 images (Unsplash License); created original SVG logo and team avatars |
 | 1 Sep 2026 | Created the 5 HTML pages with semantic structure, navigation and comments |
 | 1 Sep 2026 | Added Website Project Proposal document (2 proposals) with wireframes |
+| 1 Sep 2026 | Updated team member names and avatars (Zanele Mthembu, Ruan Botha, Ayanda Cele); rewrote both proposals in a more natural tone |
 
 ---
 
