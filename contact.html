@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  VoltStream Plumbing & Electrical - Contact page (contact.html)
+  WEDE5020 Portfolio of Evidence - Part 1
+  ------------------------------------------------------------
+  Page purpose:
+  Provides the company's contact details, opening hours and
+  the addresses of BOTH branches (Sandton head office and
+  Randburg branch), each with an embedded Google Map. A
+  summary contact form links to the full enquiry page.
+  ============================================================
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO groundwork: page-specific description -->
+    <meta name="description" content="Contact VoltStream Plumbing &amp; Electrical - phone numbers, email, opening hours and addresses of our Sandton head office and Randburg branch, with maps.">
+    <meta name="author" content="VoltStream Plumbing &amp; Electrical">
+    <title>Contact Us | VoltStream Plumbing &amp; Electrical</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  </head>
+
+  <body>
+    <!-- ===================== HEADER / NAVIGATION ===================== -->
+    <header>
+      <a href="index.html" aria-label="VoltStream Plumbing and Electrical - home">
+        <img src="images/logo.svg" alt="VoltStream Plumbing and Electrical logo" width="280" height="70">
+      </a>
+      <p>Plumbing &amp; Electrical Services - Johannesburg</p>
+
+      <!-- Same navigation menu as every other page -->
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main>
+      <!-- Page introduction -->
+      <section aria-labelledby="contact-heading">
+        <h1 id="contact-heading">Contact VoltStream</h1>
+        <p>
+          We would love to hear from you. Call, email or visit one of our two branches
+          in Johannesburg. For emergencies, the 24/7 line is always answered by a
+          human being.
+        </p>
+      </section>
+
+      <!-- Quick contact details and hours -->
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Contact Details</h2>
+        <address>
+          <strong>Phone (office hours):</strong> <a href="tel:+27115550147">011 555 0147</a><br>
+          <strong>24/7 emergency line:</strong> <a href="tel:+27825550147">082 555 0147</a><br>
+          <strong>Email:</strong> <a href="mailto:info@voltstream.co.za">info@voltstream.co.za</a>
+        </address>
+        <h3>Opening Hours</h3>
+        <ul>
+          <li>Monday - Friday: 07:00 - 17:00</li>
+          <li>Saturday: 08:00 - 13:00</li>
+          <li>Sunday: Closed (emergency line only)</li>
+          <li>Emergencies: 24/7, 365 days a year</li>
+        </ul>
+      </section>
+
+      <!-- Location 1: Sandton head office with embedded map -->
+      <section aria-labelledby="sandton-heading">
+        <h2 id="sandton-heading">Head Office - Sandton</h2>
+        <address>
+          Unit 4, 12 Rivonia Road<br>
+          Sandton, Johannesburg<br>
+          Gauteng, 2196
+        </address>
+        <!--
+          Google Maps embed (external service, no API key required).
+          The map is loaded in an iframe; Part 3 will review external
+          integrations and accessibility behaviour.
+        -->
+        <iframe
+          src="https://www.google.com/maps?q=12+Rivonia+Road,+Sandton,+Johannesburg,+2196&output=embed"
+          width="600" height="300" style="border:0" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Google Map showing the VoltStream head office at 12 Rivonia Road, Sandton, Johannesburg">
+        </iframe>
+      </section>
+
+      <!-- Location 2: Randburg branch with embedded map -->
+      <section aria-labelledby="randburg-heading">
+        <h2 id="randburg-heading">Branch - Randburg</h2>
+        <address>
+          88 Jan Smuts Avenue<br>
+          Randburg, Johannesburg<br>
+          Gauteng, 2194
+        </address>
+        <!-- Second location map (assignment requirement: more than 1 location) -->
+        <iframe
+          src="https://www.google.com/maps?q=88+Jan+Smuts+Avenue,+Randburg,+Johannesburg,+2194&output=embed"
+          width="600" height="300" style="border:0" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Google Map showing the VoltStream branch at 88 Jan Smuts Avenue, Randburg, Johannesburg">
+        </iframe>
+      </section>
+
+      <!-- Short contact form linking to the full enquiry form -->
+      <section aria-labelledby="quick-form-heading">
+        <h2 id="quick-form-heading">Send Us a Quick Message</h2>
+        <form action="enquiry.html" method="get">
+          <label for="quick-name">Your name</label>
+          <input type="text" id="quick-name" name="quick-name">
+
+          <label for="quick-message">Message</label>
+          <textarea id="quick-message" name="quick-message" rows="4"></textarea>
+
+          <button type="submit">Continue to Enquiry Form</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+      <section aria-labelledby="footer-contact">
+        <h2 id="footer-contact">Contact Us</h2>
+        <address>
+          Head Office: Unit 4, 12 Rivonia Road, Sandton, Johannesburg, 2196<br>
+          Phone: <a href="tel:+27115550147">011 555 0147</a><br>
+          Email: <a href="mailto:info@voltstream.co.za">info@voltstream.co.za</a>
+        </address>
+      </section>
+
+      <nav aria-label="Footer navigation">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section aria-labelledby="footer-hours">
+        <h2 id="footer-hours">Operating Hours</h2>
+        <ul>
+          <li>Monday - Friday: 07:00 - 17:00</li>
+          <li>Saturday: 08:00 - 13:00</li>
+          <li>Emergencies: 24/7, 365 days a year</li>
+        </ul>
+      </section>
+
+      <p>&copy; 2026 VoltStream Plumbing &amp; Electrical (Pty) Ltd. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

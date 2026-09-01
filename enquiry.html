@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  VoltStream Plumbing & Electrical - Enquiry page (enquiry.html)
+  WEDE5020 Portfolio of Evidence - Part 1
+  ------------------------------------------------------------
+  Page purpose:
+  Allows visitors to request a quote for plumbing or
+  electrical work. The form structure is defined here;
+  client-side validation will be added with JavaScript in
+  Part 3 of the project.
+  ============================================================
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO groundwork: page-specific description -->
+    <meta name="description" content="Request a free quote from VoltStream Plumbing &amp; Electrical. Tell us about your plumbing or electrical job and we will call you back within 15 minutes during office hours.">
+    <meta name="author" content="VoltStream Plumbing &amp; Electrical">
+    <title>Request a Quote | VoltStream Plumbing &amp; Electrical</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  </head>
+
+  <body>
+    <!-- ===================== HEADER / NAVIGATION ===================== -->
+    <header>
+      <a href="index.html" aria-label="VoltStream Plumbing and Electrical - home">
+        <img src="images/logo.svg" alt="VoltStream Plumbing and Electrical logo" width="280" height="70">
+      </a>
+      <p>Plumbing &amp; Electrical Services - Johannesburg</p>
+
+      <!-- Same navigation menu as every other page -->
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="enquiry.html" aria-current="page">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main>
+      <section aria-labelledby="enquiry-heading">
+        <h1 id="enquiry-heading">Request a Free Quote</h1>
+        <p>
+          Fill in the form below and a member of our team will contact you within
+          15 minutes during office hours. For water or power emergencies, call us
+          directly on <a href="tel:+27825550147">082 555 0147</a>.
+        </p>
+
+        <!--
+          Quote enquiry form.
+          NOTE: In Part 3, JavaScript will be added to validate the fields
+          (name, email, phone, service type and message) before submission.
+        -->
+        <form action="#" method="post" novalidate>
+          <!-- Personal details -->
+          <fieldset>
+            <legend>Your Details</legend>
+
+            <label for="full-name">Full name *</label>
+            <input type="text" id="full-name" name="full-name" placeholder="e.g. Lerato Mokoena" required>
+
+            <label for="email">Email address *</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+            <label for="phone">Contact number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 082 555 1234" required>
+          </fieldset>
+
+          <!-- Job details -->
+          <fieldset>
+            <legend>Job Details</legend>
+
+            <label for="service-type">Type of service *</label>
+            <select id="service-type" name="service-type" required>
+              <option value="">-- Please choose --</option>
+              <option value="plumbing">Plumbing</option>
+              <option value="electrical">Electrical</option>
+              <option value="emergency">24/7 Emergency</option>
+              <option value="maintenance">Maintenance Plan</option>
+              <option value="other">Other / Not sure</option>
+            </select>
+
+            <label for="area">Suburb / area</label>
+            <input type="text" id="area" name="area" placeholder="e.g. Sandton, Randburg, Fourways">
+
+            <label for="preferred-date">Preferred date (optional)</label>
+            <input type="date" id="preferred-date" name="preferred-date">
+
+            <label for="message">Describe the job *</label>
+            <textarea id="message" name="message" rows="6" placeholder="e.g. Geyser is leaking in the roof, need a quote for replacement" required></textarea>
+          </fieldset>
+
+          <!-- Consent checkbox -->
+          <label for="consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            I agree to be contacted by VoltStream about my enquiry.
+          </label>
+
+          <button type="submit">Send Enquiry</button>
+          <button type="reset">Clear Form</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+      <section aria-labelledby="footer-contact">
+        <h2 id="footer-contact">Contact Us</h2>
+        <address>
+          Head Office: Unit 4, 12 Rivonia Road, Sandton, Johannesburg, 2196<br>
+          Phone: <a href="tel:+27115550147">011 555 0147</a><br>
+          Email: <a href="mailto:info@voltstream.co.za">info@voltstream.co.za</a>
+        </address>
+      </section>
+
+      <nav aria-label="Footer navigation">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section aria-labelledby="footer-hours">
+        <h2 id="footer-hours">Operating Hours</h2>
+        <ul>
+          <li>Monday - Friday: 07:00 - 17:00</li>
+          <li>Saturday: 08:00 - 13:00</li>
+          <li>Emergencies: 24/7, 365 days a year</li>
+        </ul>
+      </section>
+
+      <p>&copy; 2026 VoltStream Plumbing &amp; Electrical (Pty) Ltd. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
