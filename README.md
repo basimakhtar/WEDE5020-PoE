@@ -59,8 +59,6 @@ Timeline and Milestones
 30 October 2026: Part 3 due. JavaScript functionality and SEO optimisation.
 6 November 2026: the final complete, tested website submitted.
 
-These dates follow the module's semester two submission schedule and can be adjusted if the lecturer changes the dates.
-
 
 Part 1 Details
 
