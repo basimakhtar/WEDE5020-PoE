@@ -54,9 +54,12 @@
       </section>
 
       <!-- Plumbing services -->
-      <section aria-labelledby="plumbing-heading">
+      <section aria-labelledby="plumbing-heading" class="split">
         <h2 id="plumbing-heading">Plumbing Services</h2>
-        <img src="images/pipes-industrial.jpg" alt="Industrial copper water pipes in a plant room" width="1400" height="934">
+        <img src="images/pipes-industrial-480.jpg"
+             srcset="images/pipes-industrial-480.jpg 480w, images/pipes-industrial-768.jpg 768w, images/pipes-industrial.jpg 1400w"
+             sizes="(min-width: 40em) 45vw, 100vw"
+             alt="Industrial copper water pipes in a plant room" width="480" height="320">
         <ul>
           <li>Burst and leaking pipe repair</li>
           <li>Geyser installation, repair and replacement</li>
@@ -68,9 +71,12 @@
       </section>
 
       <!-- Electrical services -->
-      <section aria-labelledby="electrical-heading">
+      <section aria-labelledby="electrical-heading" class="split">
         <h2 id="electrical-heading">Electrical Services</h2>
-        <img src="images/electrician-panel.jpg" alt="Electrician testing a residential electrical panel" width="1400" height="934">
+        <img src="images/electrician-panel-480.jpg"
+             srcset="images/electrician-panel-480.jpg 480w, images/electrician-panel-768.jpg 768w, images/electrician-panel.jpg 1400w"
+             sizes="(min-width: 40em) 45vw, 100vw"
+             alt="Electrician testing a residential electrical panel" width="480" height="320">
         <ul>
           <li>DB board upgrades and fault finding</li>
           <li>Home and office rewiring</li>
@@ -89,7 +95,9 @@
           health check of your water and electrical systems. Members also enjoy priority
           emergency response and a 10% discount on labour.
         </p>
-        <!-- Pricing table for the maintenance plan -->
+        <!-- Pricing table for the maintenance plan. The wrapper div lets the
+             table scroll sideways on narrow phones instead of breaking out. -->
+        <div class="table-scroll">
         <table>
           <caption>Maintenance plan options (2026 pricing)</caption>
           <thead>
@@ -117,10 +125,11 @@
             </tr>
           </tbody>
         </table>
+        </div>
       </section>
 
       <!-- Service area -->
-      <section aria-labelledby="area-heading">
+      <section aria-labelledby="area-heading" class="chips">
         <h2 id="area-heading">Areas We Serve</h2>
         <p>We are based in Sandton and Randburg and serve the wider Gauteng region, including:</p>
         <ul>
@@ -134,10 +143,10 @@
       </section>
 
       <!-- Call to action -->
-      <section aria-labelledby="services-cta-heading">
+      <section aria-labelledby="services-cta-heading" class="cta">
         <h2 id="services-cta-heading">Not Sure What You Need?</h2>
         <p>Describe the problem and we will recommend the right solution with a fixed quote.</p>
-        <a href="enquiry.html">Request a Quote</a>
+        <a href="enquiry.html" class="btn">Request a Quote</a>
       </section>
     </main>
 
