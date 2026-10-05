@@ -174,7 +174,7 @@ Changelog
 5 October 2026 - tested all pages in Chrome DevTools at desktop, tablet and two phone sizes, and added the screenshot evidence to the README.
 
 
-References (Harvard Style, adapted for the IIE)
+References
 
 Images
 
