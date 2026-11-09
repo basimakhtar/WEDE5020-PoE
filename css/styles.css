@@ -35,6 +35,12 @@
   padding: 0;
 }
 
+/* elements marked hidden must stay hidden even when another rule
+   gives them a display value (the lightbox and modal are flex) */
+[hidden] {
+  display: none !important;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
@@ -1006,12 +1012,13 @@ header.is-scrolled {
 
 .lightbox button {
   position: absolute;
+  z-index: 1;
   background: rgba(255, 255, 255, 0.12);
   border: none;
   color: var(--white);
   font-size: 1.6rem;
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 3rem;                  /* big enough to tap easily on a phone */
+  height: 3rem;
   border-radius: 50%;
   cursor: pointer;
 }
