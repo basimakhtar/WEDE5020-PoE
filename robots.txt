@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block crawlers from wasting their crawl budget on submission files
+Disallow: /Content-Research-Part1.zip
+Disallow: /docs/
+Disallow: /github-link.html
+Disallow: /Formative 2 Part 2 Github Link - ST10516576.pdf
+
+Sitemap: https://basimakhtar.github.io/WEDE5020-PoE/sitemap.xml
