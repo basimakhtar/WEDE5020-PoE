@@ -1,0 +1,29 @@
+{
+  "services": {
+    "plumbing": {
+      "label": "Plumbing",
+      "estimate": "R850 - R12,500 depending on the job. Burst pipes and blocked drains start at R850, geyser replacements at R4,500, and full bathroom renovations from R35,000.",
+      "lead": "Standard plumbing jobs can usually be booked within 48 hours."
+    },
+    "electrical": {
+      "label": "Electrical",
+      "estimate": "R650 - R18,000 depending on the job. Fault finding starts at R650, DB board upgrades at R4,800, and solar backup systems from R18,000.",
+      "lead": "Standard electrical jobs can usually be booked within 3 working days."
+    },
+    "emergency": {
+      "label": "24/7 Emergency",
+      "estimate": "R950 call-out fee plus parts. The fee is confirmed with you on the phone before the van leaves, and the labour for the first hour is included.",
+      "lead": "Our closest team reaches most of our service area within 60 minutes, day or night."
+    },
+    "maintenance": {
+      "label": "Maintenance Plan",
+      "estimate": "R950 per year for one trade check, R1,650 per year for the full home check with a written condition report.",
+      "lead": "Maintenance visits are scheduled 7 to 10 days ahead, and members jump the queue on emergencies."
+    },
+    "other": {
+      "label": "your request",
+      "estimate": "Confirmed by phone. A technician will call you back with a fixed quote once they understand the job.",
+      "lead": "We call back within 15 minutes during office hours."
+    }
+  }
+}
