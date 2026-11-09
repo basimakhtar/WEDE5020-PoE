@@ -63,9 +63,12 @@
           Quote enquiry form. novalidate switches off the browser's
           built-in bubbles so js/main.js can show its own messages
           next to each field; the HTML5 attributes stay in place for
-          screen readers and progressive enhancement.
+          screen readers and progressive enhancement. The action
+          points at the pricing endpoint the AJAX call reads; the
+          JavaScript handler intercepts the submit so the page never
+          actually navigates.
         -->
-        <form id="enquiry-form" action="#" method="post" novalidate>
+        <form id="enquiry-form" action="js/quotes.json" method="post" novalidate>
           <fieldset>
             <legend>Your Details</legend>
 

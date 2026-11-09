@@ -51,7 +51,9 @@ Key Features and Functionality
 - JavaScript validation on both forms, with error messages next to each field.
 - The enquiry form fetches pricing data and shows a cost estimate and availability note without reloading the page.
 - The contact form compiles the message into an email addressed to info@voltstream.co.za.
+- All the interactivity is plain JavaScript rather than jQuery, which keeps the pages light.
 - SEO: meta descriptions, canonical links, Open Graph tags, JSON-LD business data, robots.txt and sitemap.xml.
+- Off-page SEO: social media links in the footer and a Google Business Profile, so the pages can earn backlinks and local searches find the business.
 - Deployed free of charge on GitHub Pages.
 
 

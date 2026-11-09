@@ -106,7 +106,9 @@
       </section>
 
       <!-- General message form: validated by js/main.js, then compiled
-           into an email addressed to info@voltstream.co.za -->
+           into an email addressed to info@voltstream.co.za. The action
+           carries the same mailto target as a fallback for browsers
+           without JavaScript. -->
       <section aria-labelledby="message-heading">
         <h2 id="message-heading">Send Us a Message</h2>
         <p>
@@ -114,7 +116,7 @@
           questions, compliments or complaints. Your message opens in your email app,
           addressed to our office inbox.
         </p>
-        <form id="contact-form" action="#" method="post" novalidate>
+        <form id="contact-form" action="mailto:info@voltstream.co.za" method="post" novalidate>
           <fieldset>
             <legend>Your Details</legend>
 
