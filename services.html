@@ -2,24 +2,32 @@
 <!--
   ============================================================
   VoltStream Plumbing & Electrical - Services page (services.html)
-  WEDE5020 Portfolio of Evidence - Part 1
+  WEDE5020 Portfolio of Evidence - Parts 1 to 3
   ------------------------------------------------------------
   Page purpose:
   Lists the full plumbing and electrical services offered,
-  the maintenance plan, the areas we serve and a call to
-  action to request a quote.
+  the maintenance plan, the areas we serve, a live search
+  filter over the service lists, an FAQ accordion and a
+  call to action to request a quote.
   ============================================================
 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO groundwork: page-specific description -->
     <meta name="description" content="VoltStream's full range of plumbing and electrical services in Johannesburg: burst pipes, geysers, blocked drains, DB boards, rewiring, solar backup and 24/7 emergencies.">
     <meta name="author" content="VoltStream Plumbing &amp; Electrical">
+    <meta name="theme-color" content="#0b4f8a">
     <title>Our Services | VoltStream Plumbing &amp; Electrical</title>
+    <link rel="canonical" href="https://basimakhtar.github.io/WEDE5020-PoE/services.html">
+    <meta property="og:title" content="Our Services | VoltStream Plumbing &amp; Electrical">
+    <meta property="og:description" content="Plumbing, electrical and 24/7 emergency services in Johannesburg, with a 12-month guarantee.">
+    <meta property="og:url" content="https://basimakhtar.github.io/WEDE5020-PoE/services.html">
+    <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <script defer src="js/data.js"></script>
+    <script defer src="js/main.js"></script>
   </head>
 
   <body>
@@ -30,7 +38,6 @@
       </a>
       <p>Plumbing &amp; Electrical Services - Johannesburg</p>
 
-      <!-- Same navigation menu as every other page -->
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -42,7 +49,6 @@
       </nav>
     </header>
 
-    <!-- ===================== MAIN CONTENT ===================== -->
     <main>
       <!-- Page introduction -->
       <section aria-labelledby="services-heading">
@@ -53,14 +59,22 @@
         </p>
       </section>
 
+      <!-- Live search filter over both service lists -->
+      <section aria-labelledby="search-heading">
+        <h2 id="search-heading">Find a Service</h2>
+        <label for="service-search">Search plumbing and electrical services</label>
+        <input type="search" id="service-search" placeholder="e.g. geyser, solar, drains...">
+        <p id="no-results" hidden>No services match that search. Try a different word.</p>
+      </section>
+
       <!-- Plumbing services -->
-      <section aria-labelledby="plumbing-heading" class="split">
+      <section aria-labelledby="plumbing-heading" class="split service-group">
         <h2 id="plumbing-heading">Plumbing Services</h2>
         <img src="images/pipes-industrial-480.jpg"
              srcset="images/pipes-industrial-480.jpg 480w, images/pipes-industrial-768.jpg 768w, images/pipes-industrial.jpg 1400w"
              sizes="(min-width: 40em) 45vw, 100vw"
-             alt="Industrial copper water pipes in a plant room" width="480" height="320">
-        <ul>
+             alt="Industrial copper water pipes in a plant room" width="480" height="320" loading="lazy">
+        <ul class="service-items">
           <li>Burst and leaking pipe repair</li>
           <li>Geyser installation, repair and replacement</li>
           <li>Blocked drains and drain cleaning</li>
@@ -71,13 +85,13 @@
       </section>
 
       <!-- Electrical services -->
-      <section aria-labelledby="electrical-heading" class="split">
+      <section aria-labelledby="electrical-heading" class="split service-group">
         <h2 id="electrical-heading">Electrical Services</h2>
         <img src="images/electrician-panel-480.jpg"
              srcset="images/electrician-panel-480.jpg 480w, images/electrician-panel-768.jpg 768w, images/electrician-panel.jpg 1400w"
              sizes="(min-width: 40em) 45vw, 100vw"
-             alt="Electrician testing a residential electrical panel" width="480" height="320">
-        <ul>
+             alt="Electrician testing a residential electrical panel" width="480" height="320" loading="lazy">
+        <ul class="service-items">
           <li>DB board upgrades and fault finding</li>
           <li>Home and office rewiring</li>
           <li>Lighting design and LED installations</li>
@@ -95,8 +109,6 @@
           health check of your water and electrical systems. Members also enjoy priority
           emergency response and a 10% discount on labour.
         </p>
-        <!-- Pricing table for the maintenance plan. The wrapper div lets the
-             table scroll sideways on narrow phones instead of breaking out. -->
         <div class="table-scroll">
         <table>
           <caption>Maintenance plan options (2026 pricing)</caption>
@@ -142,6 +154,13 @@
         </ul>
       </section>
 
+      <!-- FAQ accordion: built from js/data.js, one question open at a time -->
+      <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Common Questions</h2>
+        <p>Everything customers ask us most, answered in one place.</p>
+        <div class="faq-list"></div>
+      </section>
+
       <!-- Call to action -->
       <section aria-labelledby="services-cta-heading" class="cta">
         <h2 id="services-cta-heading">Not Sure What You Need?</h2>
@@ -178,6 +197,10 @@
           <li>Monday - Friday: 07:00 - 17:00</li>
           <li>Saturday: 08:00 - 13:00</li>
           <li>Emergencies: 24/7, 365 days a year</li>
+        </ul>
+        <ul class="social-links">
+          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
       </section>
 

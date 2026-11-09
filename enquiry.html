@@ -2,25 +2,33 @@
 <!--
   ============================================================
   VoltStream Plumbing & Electrical - Enquiry page (enquiry.html)
-  WEDE5020 Portfolio of Evidence - Part 1
+  WEDE5020 Portfolio of Evidence - Parts 1 to 3
   ------------------------------------------------------------
   Page purpose:
-  Allows visitors to request a quote for plumbing or
-  electrical work. The form structure is defined here;
-  client-side validation will be added with JavaScript in
-  Part 3 of the project.
+  Quote request form. js/main.js validates every field (name,
+  email, South African phone number, service type, date and
+  message length), then submits the request with fetch() to
+  js/quotes.json and shows the visitor an estimate and an
+  availability note without reloading the page.
   ============================================================
 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO groundwork: page-specific description -->
     <meta name="description" content="Request a free quote from VoltStream Plumbing &amp; Electrical. Tell us about your plumbing or electrical job and we will call you back within 15 minutes during office hours.">
     <meta name="author" content="VoltStream Plumbing &amp; Electrical">
+    <meta name="theme-color" content="#0b4f8a">
     <title>Request a Quote | VoltStream Plumbing &amp; Electrical</title>
+    <link rel="canonical" href="https://basimakhtar.github.io/WEDE5020-PoE/enquiry.html">
+    <meta property="og:title" content="Request a Quote | VoltStream Plumbing &amp; Electrical">
+    <meta property="og:description" content="Free, fixed quotes for plumbing and electrical work in Johannesburg - we call back within 15 minutes.">
+    <meta property="og:url" content="https://basimakhtar.github.io/WEDE5020-PoE/enquiry.html">
+    <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <script defer src="js/data.js"></script>
+    <script defer src="js/main.js"></script>
   </head>
 
   <body>
@@ -31,7 +39,6 @@
       </a>
       <p>Plumbing &amp; Electrical Services - Johannesburg</p>
 
-      <!-- Same navigation menu as every other page -->
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -43,7 +50,6 @@
       </nav>
     </header>
 
-    <!-- ===================== MAIN CONTENT ===================== -->
     <main>
       <section aria-labelledby="enquiry-heading">
         <h1 id="enquiry-heading">Request a Free Quote</h1>
@@ -54,12 +60,12 @@
         </p>
 
         <!--
-          Quote enquiry form.
-          NOTE: In Part 3, JavaScript will be added to validate the fields
-          (name, email, phone, service type and message) before submission.
+          Quote enquiry form. novalidate switches off the browser's
+          built-in bubbles so js/main.js can show its own messages
+          next to each field; the HTML5 attributes stay in place for
+          screen readers and progressive enhancement.
         -->
-        <form action="#" method="post" novalidate>
-          <!-- Personal details -->
+        <form id="enquiry-form" action="#" method="post" novalidate>
           <fieldset>
             <legend>Your Details</legend>
 
@@ -73,7 +79,6 @@
             <input type="tel" id="phone" name="phone" placeholder="e.g. 082 555 1234" required>
           </fieldset>
 
-          <!-- Job details -->
           <fieldset>
             <legend>Job Details</legend>
 
@@ -97,7 +102,6 @@
             <textarea id="message" name="message" rows="6" placeholder="e.g. Geyser is leaking in the roof, need a quote for replacement" required></textarea>
           </fieldset>
 
-          <!-- Consent checkbox -->
           <label for="consent" class="consent">
             <input type="checkbox" id="consent" name="consent" required>
             I agree to be contacted by VoltStream about my enquiry.
@@ -106,6 +110,18 @@
           <button type="submit">Send Enquiry</button>
           <button type="reset">Clear Form</button>
         </form>
+
+        <!-- Quote response: filled in by js/main.js after the AJAX call -->
+        <div id="quote-result" class="quote-result" role="status" hidden>
+          <h2>Thanks, <span id="result-name"></span></h2>
+          <p>
+            Your request for <strong id="result-service"></strong> has been received.
+            A technician will confirm the details with you shortly.
+          </p>
+          <p>Estimated cost: <strong id="result-estimate"></strong></p>
+          <p>Availability: <strong id="result-lead"></strong> for <span id="result-area"></span>.</p>
+          <p>If it is urgent, call the 24/7 line now on <a href="tel:+27825550147">082 555 0147</a>.</p>
+        </div>
       </section>
     </main>
 
@@ -137,6 +153,10 @@
           <li>Monday - Friday: 07:00 - 17:00</li>
           <li>Saturday: 08:00 - 13:00</li>
           <li>Emergencies: 24/7, 365 days a year</li>
+        </ul>
+        <ul class="social-links">
+          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
       </section>
 

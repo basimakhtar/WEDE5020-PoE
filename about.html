@@ -2,23 +2,31 @@
 <!--
   ============================================================
   VoltStream Plumbing & Electrical - About Us page (about.html)
-  WEDE5020 Portfolio of Evidence - Part 1
+  WEDE5020 Portfolio of Evidence - Parts 1 to 3
   ------------------------------------------------------------
   Page purpose:
-  Tells the story of the business, states its mission and
-  vision, lists the company values and introduces the team.
+  Tells the story of the business through tabs (history,
+  mission and vision, values) and introduces the team with
+  clickable cards that open a modal with the full bio.
   ============================================================
 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO groundwork: page-specific description -->
     <meta name="description" content="Learn about VoltStream Plumbing &amp; Electrical - our history, mission, vision, values and the qualified team behind Johannesburg's trusted plumbing and electrical service.">
     <meta name="author" content="VoltStream Plumbing &amp; Electrical">
+    <meta name="theme-color" content="#0b4f8a">
     <title>About Us | VoltStream Plumbing &amp; Electrical</title>
+    <link rel="canonical" href="https://basimakhtar.github.io/WEDE5020-PoE/about.html">
+    <meta property="og:title" content="About Us | VoltStream Plumbing &amp; Electrical">
+    <meta property="og:description" content="The story, values and team behind Johannesburg's 24/7 plumbing and electrical service.">
+    <meta property="og:url" content="https://basimakhtar.github.io/WEDE5020-PoE/about.html">
+    <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <script defer src="js/data.js"></script>
+    <script defer src="js/main.js"></script>
   </head>
 
   <body>
@@ -29,7 +37,6 @@
       </a>
       <p>Plumbing &amp; Electrical Services - Johannesburg</p>
 
-      <!-- Same navigation menu as every other page -->
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -41,7 +48,6 @@
       </nav>
     </header>
 
-    <!-- ===================== MAIN CONTENT ===================== -->
     <main>
       <!-- Page introduction -->
       <section aria-labelledby="about-heading">
@@ -54,74 +60,97 @@
         </p>
       </section>
 
-      <!-- Company history -->
-      <section aria-labelledby="history-heading">
-        <h2 id="history-heading">Our History</h2>
-        <p>
-          VoltStream was founded in 2011 by master plumber Zanele Mthembu as a one-van
-          plumbing service operating from Sandton. Word-of-mouth referrals grew the
-          business quickly, and in 2016 we added a full electrical division after
-          customers repeatedly asked for a contractor they could trust with both trades.
-        </p>
-        <p>
-          In 2020 we opened a second branch in Randburg, and in 2023 we launched our
-          24/7 emergency response line. Today a team of 14 licensed plumbers and
-          electricians serves more than 900 households every year.
-        </p>
+      <!-- Company story in tabs: history, mission and vision, values -->
+      <section aria-labelledby="story-heading">
+        <h2 id="story-heading">Our Story</h2>
+        <div class="tabs">
+          <div class="tab-list" role="tablist" aria-label="About VoltStream">
+            <button type="button" role="tab" id="tab-history" aria-controls="panel-history">History</button>
+            <button type="button" role="tab" id="tab-mission" aria-controls="panel-mission">Mission &amp; Vision</button>
+            <button type="button" role="tab" id="tab-values" aria-controls="panel-values">Values</button>
+          </div>
+
+          <div role="tabpanel" id="panel-history" aria-labelledby="tab-history">
+            <p>
+              VoltStream was founded in 2011 by master plumber Zanele Mthembu as a one-van
+              plumbing service operating from Sandton. Word-of-mouth referrals grew the
+              business quickly, and in 2016 we added a full electrical division after
+              customers repeatedly asked for a contractor they could trust with both trades.
+            </p>
+            <p>
+              In 2020 we opened a second branch in Randburg, and in 2023 we launched our
+              24/7 emergency response line. Today a team of 14 licensed plumbers and
+              electricians serves more than 900 households every year.
+            </p>
+          </div>
+
+          <div role="tabpanel" id="panel-mission" aria-labelledby="tab-mission">
+            <h3>Our Mission</h3>
+            <p>
+              To keep South African homes and businesses safe, powered and flowing by
+              delivering dependable plumbing and electrical services with honesty, speed
+              and transparent pricing.
+            </p>
+            <h3>Our Vision</h3>
+            <p>
+              To become Gauteng's most trusted plumbing and electrical services provider -
+              the first number people save for every water or power emergency.
+            </p>
+          </div>
+
+          <div role="tabpanel" id="panel-values" aria-labelledby="tab-values">
+            <ul>
+              <li><strong>Safety first:</strong> Every job complies with South African building and wiring regulations.</li>
+              <li><strong>Honesty:</strong> We quote before we work and never invent problems to inflate the bill.</li>
+              <li><strong>Respect:</strong> We treat your home like our own - dust sheets down, shoes off, mess cleaned.</li>
+              <li><strong>Craftsmanship:</strong> We are registered artisans who take pride in work that lasts.</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <!-- Mission and vision statements -->
-      <section aria-labelledby="mission-heading">
-        <h2 id="mission-heading">Mission &amp; Vision</h2>
-        <h3>Our Mission</h3>
-        <p>
-          To keep South African homes and businesses safe, powered and flowing by
-          delivering dependable plumbing and electrical services with honesty, speed
-          and transparent pricing.
-        </p>
-        <h3>Our Vision</h3>
-        <p>
-          To become Gauteng's most trusted plumbing and electrical services provider -
-          the first number people save for every water or power emergency.
-        </p>
-      </section>
-
-      <!-- Company values -->
-      <section aria-labelledby="values-heading">
-        <h2 id="values-heading">Our Values</h2>
-        <ul>
-          <li><strong>Safety first:</strong> Every job complies with South African building and wiring regulations.</li>
-          <li><strong>Honesty:</strong> We quote before we work and never invent problems to inflate the bill.</li>
-          <li><strong>Respect:</strong> We treat your home like our own - dust sheets down, shoes off, mess cleaned.</li>
-          <li><strong>Craftsmanship:</strong> We are registered artisans who take pride in work that lasts.</li>
-        </ul>
-      </section>
-
-      <!-- Team members -->
+      <!-- Team members: clicking a card opens a modal with the full bio -->
       <section aria-labelledby="team-heading" class="team">
         <h2 id="team-heading">Meet the Team</h2>
+        <p>Click a team member to read their full story.</p>
         <ul>
           <li>
-            <!-- Placeholder avatar: replace with a real team photo in Part 2 -->
-            <img src="images/team-zanele.svg" alt="Avatar of Zanele Mthembu" width="140" height="140">
-            <h3>Zanele Mthembu</h3>
-            <p>Founder &amp; Master Plumber</p>
-            <p>21 years of plumbing experience; registered with PIRB (Plumbing Industry Registration Board).</p>
+            <button type="button" data-bio="zanele" aria-haspopup="dialog">
+              <img src="images/team-zanele.svg" alt="Avatar of Zanele Mthembu" width="140" height="140">
+              <h3>Zanele Mthembu</h3>
+              <p>Founder &amp; Master Plumber</p>
+              <p>21 years of plumbing experience; registered with PIRB (Plumbing Industry Registration Board).</p>
+            </button>
           </li>
           <li>
-            <img src="images/team-ruan.svg" alt="Avatar of Ruan Botha" width="140" height="140">
-            <h3>Ruan Botha</h3>
-            <p>Master Electrician</p>
-            <p>14 years of electrical experience; registered with the Department of Labour as an installation electrician.</p>
+            <button type="button" data-bio="ruan" aria-haspopup="dialog">
+              <img src="images/team-ruan.svg" alt="Avatar of Ruan Botha" width="140" height="140">
+              <h3>Ruan Botha</h3>
+              <p>Master Electrician</p>
+              <p>14 years of electrical experience; registered with the Department of Labour as an installation electrician.</p>
+            </button>
           </li>
           <li>
-            <img src="images/team-ayanda.svg" alt="Avatar of Ayanda Cele" width="140" height="140">
-            <h3>Ayanda Cele</h3>
-            <p>Operations Manager</p>
-            <p>Coordinates the rapid-response team and keeps every job on schedule, day and night.</p>
+            <button type="button" data-bio="ayanda" aria-haspopup="dialog">
+              <img src="images/team-ayanda.svg" alt="Avatar of Ayanda Cele" width="140" height="140">
+              <h3>Ayanda Cele</h3>
+              <p>Operations Manager</p>
+              <p>Coordinates the rapid-response team and keeps every job on schedule, day and night.</p>
+            </button>
           </li>
         </ul>
       </section>
+
+      <!-- Team bio modal: filled by js/main.js -->
+      <div id="bio-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="bio-name" hidden>
+        <div class="modal-card">
+          <h3 id="bio-name"></h3>
+          <p id="bio-role" class="modal-role"></p>
+          <p id="bio-text"></p>
+          <p id="bio-detail" class="modal-detail"></p>
+          <button type="button" id="bio-close" class="btn">Close</button>
+        </div>
+      </div>
 
       <!-- Call to action -->
       <section aria-labelledby="about-cta-heading" class="cta">
@@ -159,6 +188,10 @@
           <li>Monday - Friday: 07:00 - 17:00</li>
           <li>Saturday: 08:00 - 13:00</li>
           <li>Emergencies: 24/7, 365 days a year</li>
+        </ul>
+        <ul class="social-links">
+          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
       </section>
 

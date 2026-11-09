@@ -2,41 +2,72 @@
 <!--
   ============================================================
   VoltStream Plumbing & Electrical - Home page (index.html)
-  WEDE5020 Portfolio of Evidence - Part 1
+  WEDE5020 Portfolio of Evidence - Parts 1 to 3
   ------------------------------------------------------------
   Page purpose:
   Introduces the business with a hero section, highlights the
   three core service areas, explains why customers choose
-  VoltStream, shows customer testimonials and ends with a
-  strong call-to-action linking to the enquiry page.
+  VoltStream, shows customer testimonials, a filterable
+  recent-work gallery with a lightbox, and ends with a strong
+  call-to-action linking to the enquiry page.
   ============================================================
 -->
 <html lang="en">
   <head>
-    <!-- Basic meta tags: character set and responsive viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO groundwork: description and keywords for search engines -->
+    <!-- SEO: description and keywords for search engines -->
     <meta name="description" content="VoltStream Plumbing &amp; Electrical offers 24/7 plumbing and electrical services in Johannesburg, including burst pipes, geysers, DB boards and solar backup installations.">
     <meta name="keywords" content="plumber Johannesburg, electrician Sandton, 24/7 emergency plumber, geyser repair, DB board upgrade, solar backup installation">
     <meta name="author" content="VoltStream Plumbing &amp; Electrical">
+    <meta name="theme-color" content="#0b4f8a">
     <title>VoltStream Plumbing &amp; Electrical | 24/7 Plumbers &amp; Electricians in Johannesburg</title>
+    <!-- SEO: canonical URL and social sharing cards -->
+    <link rel="canonical" href="https://basimakhtar.github.io/WEDE5020-PoE/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VoltStream Plumbing &amp; Electrical | 24/7 Plumbers &amp; Electricians">
+    <meta property="og:description" content="24/7 plumbing and electrical services in Johannesburg. 60-minute response, fixed quotes and a 12-month guarantee.">
+    <meta property="og:image" content="https://basimakhtar.github.io/WEDE5020-PoE/images/hero-electric-768.jpg">
+    <meta property="og:url" content="https://basimakhtar.github.io/WEDE5020-PoE/index.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- SEO: structured data so search engines understand the business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "VoltStream Plumbing and Electrical",
+      "description": "24/7 plumbing and electrical services in Johannesburg.",
+      "telephone": "+27115550147",
+      "email": "info@voltstream.co.za",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit 4, 12 Rivonia Road",
+        "addressLocality": "Sandton, Johannesburg",
+        "addressRegion": "Gauteng",
+        "postalCode": "2196",
+        "addressCountry": "ZA"
+      },
+      "openingHours": "Mo-Fr 07:00-17:00, Sa 08:00-13:00",
+      "priceRange": "R650 - R65000"
+    }
+    </script>
     <!-- External stylesheet shared by all five pages -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- Favicon using the original SVG logo -->
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <!-- Data and behaviour load last and never block rendering -->
+    <script defer src="js/data.js"></script>
+    <script defer src="js/main.js"></script>
   </head>
 
   <body>
     <!-- ===================== HEADER / NAVIGATION ===================== -->
     <header>
-      <!-- Company logo and tagline -->
       <a href="index.html" aria-label="VoltStream Plumbing and Electrical - home">
         <img src="images/logo.svg" alt="VoltStream Plumbing and Electrical logo" width="280" height="70">
       </a>
       <p>Plumbing &amp; Electrical Services - Johannesburg</p>
 
-      <!-- Main navigation menu used on every page of the website -->
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
@@ -48,12 +79,10 @@
       </nav>
     </header>
 
-    <!-- ===================== MAIN CONTENT ===================== -->
     <main>
-      <!-- Hero section: headline, supporting text and calls to action -->
+      <!-- Hero: headline, supporting text and calls to action -->
       <section aria-labelledby="hero-heading" class="hero">
         <h1 id="hero-heading">Fast, Reliable Plumbing &amp; Electrical - 24 Hours a Day</h1>
-        <!-- Responsive image: square crop on phones, three resolutions elsewhere -->
         <picture>
           <source media="(max-width: 40em)" srcset="images/hero-electric-800.jpg">
           <img src="images/hero-electric-480.jpg"
@@ -67,7 +96,6 @@
           plumbers and electricians respond within 60 minutes in Sandton, Randburg,
           Fourways and surrounding areas.
         </p>
-        <!-- Primary call-to-action buttons -->
         <div class="cta-row">
           <a href="enquiry.html" class="btn">Request a Quote</a>
           <a href="services.html" class="btn btn-secondary">Explore Our Services</a>
@@ -83,7 +111,7 @@
             <img src="images/plumber-sink-480.jpg"
                  srcset="images/plumber-sink-480.jpg 480w, images/plumber-sink-768.jpg 768w, images/plumber-sink.jpg 1400w"
                  sizes="(min-width: 64em) 30vw, (min-width: 40em) 45vw, 100vw"
-                 alt="Plumber repairing a leaking pipe under a sink" width="480" height="320">
+                 alt="Plumber repairing a leaking pipe under a sink" width="480" height="320" loading="lazy">
             <p>Burst pipes, blocked drains, geyser installations and leak detection - fixed right the first time.</p>
           </li>
           <li>
@@ -91,7 +119,7 @@
             <img src="images/electrician-panel-480.jpg"
                  srcset="images/electrician-panel-480.jpg 480w, images/electrician-panel-768.jpg 768w, images/electrician-panel.jpg 1400w"
                  sizes="(min-width: 64em) 30vw, (min-width: 40em) 45vw, 100vw"
-                 alt="Electrician testing a residential electrical panel" width="480" height="320">
+                 alt="Electrician testing a residential electrical panel" width="480" height="320" loading="lazy">
             <p>DB board upgrades, rewiring, lighting and Certificate of Compliance issued by registered electricians.</p>
           </li>
           <li>
@@ -99,7 +127,7 @@
             <img src="images/electrician-work-480.jpg"
                  srcset="images/electrician-work-480.jpg 480w, images/electrician-work-768.jpg 768w, images/electrician-work.jpg 1400w"
                  sizes="(min-width: 64em) 30vw, (min-width: 40em) 45vw, 100vw"
-                 alt="Emergency electrician repairing wiring at night" width="480" height="320">
+                 alt="Emergency electrician repairing wiring at night" width="480" height="320" loading="lazy">
             <p>Water or power emergency? Our rapid-response team is on call every day of the year, day and night.</p>
           </li>
         </ul>
@@ -112,7 +140,7 @@
         <img src="images/house-exterior-480.jpg"
              srcset="images/house-exterior-480.jpg 480w, images/house-exterior-768.jpg 768w, images/house-exterior.jpg 1400w"
              sizes="(min-width: 40em) 45vw, 100vw"
-             alt="Modern family home exterior in Johannesburg" width="480" height="320">
+             alt="Modern family home exterior in Johannesburg" width="480" height="320" loading="lazy">
         <ul>
           <li><strong>Licensed &amp; insured:</strong> All work is done by registered plumbers and electricians.</li>
           <li><strong>Transparent pricing:</strong> Fixed quotes before any work begins - no surprises.</li>
@@ -121,17 +149,33 @@
         </ul>
       </section>
 
-      <!-- Customer testimonials: social proof -->
+      <!-- Recent work gallery: rendered by js/data.js, filtered by buttons -->
+      <section aria-labelledby="gallery-heading" class="gallery">
+        <h2 id="gallery-heading">Recent Work</h2>
+        <p>Click a photo to see it full size. Use the buttons to filter the jobs.</p>
+        <div class="filter-bar" role="group" aria-label="Filter the recent work gallery">
+          <button type="button" data-filter="all" class="active">All</button>
+          <button type="button" data-filter="plumbing">Plumbing</button>
+          <button type="button" data-filter="electrical">Electrical</button>
+        </div>
+        <ul id="gallery-grid" aria-live="polite"></ul>
+      </section>
+
+      <!-- Lightbox overlay for the gallery -->
+      <div id="lightbox" class="lightbox" hidden>
+        <figure>
+          <img src="" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <button type="button" id="lightbox-prev" aria-label="Previous photo">&#10094;</button>
+        <button type="button" id="lightbox-next" aria-label="Next photo">&#10095;</button>
+        <button type="button" id="lightbox-close" aria-label="Close the enlarged photo">&times;</button>
+      </div>
+
+      <!-- Customer testimonials: rendered by js/data.js -->
       <section aria-labelledby="testimonials-heading" class="testimonials">
         <h2 id="testimonials-heading">What Our Customers Say</h2>
-        <blockquote>
-          <p>"Our geyser burst on a Sunday night. VoltStream arrived in 40 minutes, replaced the unit by 10pm and cleaned up perfectly. Incredible service."</p>
-          <footer>- Lerato M., Bryanston</footer>
-        </blockquote>
-        <blockquote>
-          <p>"They upgraded our DB board and issued the CoC the same week. Professional, tidy and fairly priced. Highly recommended."</p>
-          <footer>- Johan V., Randburg</footer>
-        </blockquote>
+        <div id="testimonial-list"></div>
       </section>
 
       <!-- Final call-to-action banner -->
@@ -156,7 +200,6 @@
         </address>
       </section>
 
-      <!-- Quick links repeat the main navigation for convenience -->
       <nav aria-label="Footer navigation">
         <h2>Quick Links</h2>
         <ul>
@@ -174,6 +217,11 @@
           <li>Monday - Friday: 07:00 - 17:00</li>
           <li>Saturday: 08:00 - 13:00</li>
           <li>Emergencies: 24/7, 365 days a year</li>
+        </ul>
+        <!-- social links support the off-page SEO plan in the README -->
+        <ul class="social-links">
+          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
       </section>
 
