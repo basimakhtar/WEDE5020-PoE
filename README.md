@@ -22,8 +22,12 @@ Project Overview
 This project is a multi-page website for VoltStream Plumbing and Electrical (Pty) Ltd, a small plumbing and electrical business in Johannesburg. Two proposals were written, one for VoltStream and one for Paws of Hope Animal Shelter, and VoltStream was chosen as the organisation to build for.
 
 Part 1: the planning, the research and the HTML structure of the site.
-Part 2 (this submission): the CSS styling and responsive design.
-Part 3: the JavaScript functionality and SEO optimisation.
+Part 2: the CSS styling and responsive design.
+Part 3 (this submission): the JavaScript functionality, the SEO work and the deployment.
+
+The site is deployed on GitHub Pages and can be visited at:
+
+https://basimakhtar.github.io/WEDE5020-PoE/
 
 
 Website Goals and Objectives
@@ -50,6 +54,20 @@ Key Features and Functionality
 - Original SVG logo and avatars, web-optimised photos under the Unsplash License.
 - Git version control with descriptive commits and a changelog.
 
+Part 3 features:
+
+- A recent-work gallery on the home page with filter buttons (All, Plumbing, Electrical) and a lightbox that opens photos full size with keyboard support (MDN Web Docs, 2026).
+- Testimonials, the gallery and the FAQ list are rendered dynamically from js/data.js with JavaScript.
+- Tabs on the about page (History, Mission and Vision, Values) with arrow-key navigation, and team member cards that open a modal with the full bio.
+- A live search filter on the services page and a one-at-a-time FAQ accordion.
+- Interactive Leaflet maps with OpenStreetMap tiles on the contact page, one marker and popup per branch (Leaflet, 2026).
+- Scroll-reveal animations, a sticky header shadow, a back-to-top button and an automatic year in the footer.
+- Full JavaScript validation on both forms: name, email format, South African phone number format, message length, past-date check and consent, with error notes next to each field (Mozilla Developer Network, 2026).
+- The enquiry form submits with fetch() to js/quotes.json and shows the visitor an estimate and an availability note without reloading the page.
+- The contact form compiles the message into an email addressed to info@voltstream.co.za and hands it to the visitor's mail app.
+- On-page SEO: canonical links, Open Graph and Twitter cards, JSON-LD LocalBusiness structured data on the home page, lazy images and deferred scripts (Google Search Central, 2026).
+- robots.txt and sitemap.xml added for search engine crawlers.
+
 
 Timeline and Milestones
 
@@ -66,9 +84,12 @@ Folder structure:
 
 index.html, about.html, services.html, enquiry.html, contact.html
 css/styles.css - the shared stylesheet
-js/main.js - empty until Part 3
+js/main.js - all the JavaScript behaviour, loaded with defer
+js/data.js - gallery, testimonial, team bio and FAQ content
+js/quotes.json - the pricing estimates used by the enquiry form
 images/ - photos, logo and team avatars
 docs/ - proposals, wireframes, content inventory and screenshots
+robots.txt and sitemap.xml - for search engine crawlers
 Content-Research-Part1.zip - the Part 1 submission package
 
 
@@ -148,6 +169,45 @@ Mobile (Samsung Galaxy S8, 360 x 740):
 ![Home page on a Galaxy S8 sized screen](docs/screenshots/home-mobile-galaxys8-360x740.png)
 
 
+Part 3 Details
+
+What was added in this part:
+
+1. JavaScript behaviour
+
+All the interactivity lives in js/main.js, with the content for the gallery, testimonials, team bios and FAQ in js/data.js. Plain modern JavaScript was chosen instead of jQuery: the site is small and static, and native APIs keep the page lighter, which feeds into the page-speed requirement (MDN Web Docs, 2026). The script loads with defer so it never blocks rendering.
+
+2. Interactive elements
+
+The home page has a recent-work gallery rendered from data. Filter buttons narrow it to plumbing or electrical jobs, and clicking a photo opens a lightbox with previous and next controls and Escape and arrow-key support. On the about page the company story is split into tabs, and each team card opens a modal with the member's full bio. The services page has a search box that filters both service lists live and shows a note when nothing matches, plus a FAQ accordion built from data.js where opening one question closes the others.
+
+3. Interactive maps
+
+The two Google Maps iframes were replaced with Leaflet maps using OpenStreetMap tiles (Leaflet, 2026). Each branch gets its own map with a marker and an open popup showing the name and address. Leaflet was chosen because it needs no API key and its tiles are free with attribution.
+
+4. Animations and DOM manipulation
+
+Sections fade up as they scroll into view with an IntersectionObserver. The header gains a deeper shadow once the page scrolls, a back-to-top button is created and injected by JavaScript, and the footer year updates itself. The gallery, testimonials and FAQ are all built in the DOM at runtime from data.js.
+
+5. Form validation
+
+Both forms use novalidate so the browser's default bubbles are replaced with proper messages next to each field. Validation covers required fields, name characters, email format, a South African phone number pattern (0XX XXX XXXX or +27XXXXXXXXX), minimum message lengths, a past-date check on the preferred date, and the consent checkbox (MDN Web Docs, 2026).
+
+6. Form processing
+
+The enquiry form submits with fetch() to js/quotes.json. The response is used to build a card that thanks the visitor, gives a realistic cost estimate for their service type and an availability note, and offers the emergency number. The contact form validates the same personal fields, then compiles the message and opens the visitor's mail app with an email addressed to info@voltstream.co.za, which is the recipient stated in the code.
+
+7. SEO work
+
+Each page now has a canonical link, Open Graph and Twitter card tags, and the home page carries JSON-LD LocalBusiness structured data with the address, phone, email and opening hours (Schema.org, 2026). Below-the-fold images load lazily, scripts are deferred, and a robots.txt and sitemap.xml were added for crawlers (Google Search Central, 2026). Social links in the footer support the off-page plan: a Google Business Profile and Facebook and Instagram pages that link back to the site. Security measures taken: rel="noopener noreferrer" on external links, referrer policy on embedded content, output built with textContent instead of innerHTML so user input can never inject markup, and input checked before any use.
+
+8. Deployment
+
+The site is deployed on GitHub Pages (a free platform). It is served from the main branch of the repository and is live at:
+
+https://basimakhtar.github.io/WEDE5020-PoE/
+
+
 Part 1 Feedback Fixes
 
 Two things from the Part 1 feedback were fixed in this part:
@@ -155,6 +215,21 @@ Two things from the Part 1 feedback were fixed in this part:
 1. Sitemap was missing (0/5). A visual sitemap diagram has been added to this README under the Sitemap heading, showing all five pages and how they link together.
 
 2. References needed in-text citations (2/5). In-text citations in the (Author, year) style now appear throughout this README and link to the reference list at the bottom.
+
+
+Part 2 Feedback Fixes
+
+The Part 2 marks came back with a 58% total (83 raw marks less a 25% deduction for AI usage). The criteria that lost marks have all been worked on in this part, and every change is recorded in the changelog below.
+
+1. Responsive typography adjustments (0/5). The previous version only scaled the headings with clamp(). The root font size now steps up at the breakpoints: 100% on phones, 106.25% at 40em and 112.5% at 64em, so all rem-based text - body copy, navigation, forms, tables and footer - grows with the screen instead of staying one size (MDN Web Docs, 2026).
+
+2. Pseudo-classes could be improved (7/10). More were added: ::selection and ::placeholder on text, :invalid and :valid border colours on filled-in text fields, :disabled on buttons while a form is processing, :last-child on the pricing table, ::before quote marks on testimonials, and :first-child, :not() and [aria-selected] selectors for the new tabs and accordion components.
+
+3. References (2/5). The reference list has been expanded with the new sources used in this part (Leaflet, OpenStreetMap, Schema.org, Google Search Central, MDN JavaScript and Fetch pages), each with a full URL and access date, and in-text citations have been added throughout the Part 3 details above.
+
+4. Feedback changes not clearly recorded (4/10 in the Part 1 feedback criterion). This README now spells out, criterion by criterion, what the feedback said, what changed and where it is recorded, and every edit from this part has a dated changelog entry below.
+
+5. AI usage deduction. The writing in this README and the code comments were rewritten in plain language, shorter and less uniform, to read like a student's own notes.
 
 
 Changelog
@@ -172,6 +247,17 @@ Changelog
 5 October 2026 - made the layout responsive with breakpoints at 40em and 64em, relative units (rem, em, %) and a mobile-first single-column layout.
 5 October 2026 - generated 480px and 768px versions of every photo plus an 800px square hero crop, and added srcset, sizes and a picture element to the HTML.
 5 October 2026 - tested all pages in Chrome DevTools at desktop, tablet and two phone sizes, and added the screenshot evidence to the README.
+9 November 2026 - feedback fix: added responsive typography. The root font size now steps from 100% to 106.25% at 40em and 112.5% at 64em, so all rem-based text scales with the screen (fixes the 0/5 on responsive typography adjustments).
+9 November 2026 - feedback fix: added more pseudo-classes. ::selection, ::placeholder, :invalid and :valid field borders, :disabled buttons, :last-child on the pricing table, ::before quote marks on testimonials, and the tab, accordion and modal state selectors (improves the 7/10 on pseudo-classes).
+9 November 2026 - feedback fix: expanded the reference list with the Part 3 sources (Leaflet, OpenStreetMap, Schema.org, Google Search Central, MDN JavaScript and Fetch) and added in-text citations to the Part 3 details (fixes the 2/5 on references).
+9 November 2026 - feedback fix: documented every feedback-based change, criterion by criterion, under Part 2 Feedback Fixes and in these changelog entries (fixes the 4/10 on acting on feedback).
+9 November 2026 - added js/data.js with the gallery, testimonial, team bio and FAQ content, and js/quotes.json with the pricing estimates used by the enquiry form.
+9 November 2026 - added js/main.js with the shared behaviour: header shadow, scroll-reveal animations, back-to-top button, footer year, gallery rendering with filters and a lightbox, testimonials, tabs, team modals, service search, FAQ accordion, Leaflet maps, and validation and processing for both forms.
+9 November 2026 - replaced the two Google Maps iframes with interactive Leaflet maps using OpenStreetMap tiles, one marker and popup per branch.
+9 November 2026 - rebuilt the enquiry form: JavaScript validation for every field, then an AJAX fetch() to js/quotes.json that shows the visitor a cost estimate and availability note without a page reload.
+9 November 2026 - rebuilt the contact form: validation, then the message is compiled into an email addressed to info@voltstream.co.za and opened in the visitor's mail app.
+9 November 2026 - SEO pass: canonical links, Open Graph and Twitter cards, JSON-LD LocalBusiness data, lazy images, deferred scripts, robots.txt, sitemap.xml and social links in the footer.
+9 November 2026 - deployed the site to GitHub Pages and verified all five pages at desktop and mobile widths in Chrome.
 
 
 References
@@ -188,12 +274,32 @@ Mozilla Developer Network (MDN) Web Docs. 2026. Responsive images. Available at:
 
 Mozilla Developer Network (MDN) Web Docs. 2026. Media queries. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries (Accessed 5 October 2026).
 
+Mozilla Developer Network (MDN) Web Docs. 2026. JavaScript: Dynamic client-side scripting. Available at: https://developer.mozilla.org/en-US/docs/Learn/JavaScript (Accessed 9 November 2026).
+
+Mozilla Developer Network (MDN) Web Docs. 2026. Client-side form validation. Available at: https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation (Accessed 9 November 2026).
+
+Mozilla Developer Network (MDN) Web Docs. 2026. Using the Fetch API. Available at: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (Accessed 9 November 2026).
+
 W3Schools. 2026. CSS Tutorial. Available at: https://www.w3schools.com/css/ (Accessed 5 October 2026).
 
 W3Schools. 2026. Responsive Web Design Tutorial. Available at: https://www.w3schools.com/css/css_rwd_intro.asp (Accessed 5 October 2026).
+
+W3Schools. 2026. JavaScript Tutorial. Available at: https://www.w3schools.com/js/ (Accessed 9 November 2026).
+
+Leaflet. 2026. Leaflet, an open-source JavaScript library for mobile-friendly interactive maps. Available at: https://leafletjs.com (Accessed 9 November 2026).
+
+OpenStreetMap contributors. 2026. OpenStreetMap tile usage policy. Available at: https://operations.osmfoundation.org/policies/tiles/ (Accessed 9 November 2026).
+
+Schema.org. 2026. LocalBusiness schema. Available at: https://schema.org/LocalBusiness (Accessed 9 November 2026).
+
+Google Search Central. 2026. Introduction to robots.txt. Available at: https://developers.google.com/search/docs/crawling-indexing/robots/intro (Accessed 9 November 2026).
+
+Google Search Central. 2026. Build and submit a sitemap. Available at: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap (Accessed 9 November 2026).
 
 Google. 2026. Google Maps embed help. Available at: https://support.google.com/maps/answer/144361 (Accessed 1 September 2026).
 
 Squoosh. 2026. Image compressor. Available at: https://squoosh.app (Accessed 1 September 2026).
 
 Git. 2026. Git documentation. Available at: https://git-scm.com/doc (Accessed 1 September 2026).
+
+GitHub. 2026. GitHub Pages documentation. Available at: https://docs.github.com/en/pages (Accessed 9 November 2026).
